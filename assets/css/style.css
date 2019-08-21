@@ -1,0 +1,13 @@
+
+
+.numberBox {
+    margin: 10px;
+}
+#background {
+    background-image: url("../images/cool-backgrounds-feat-1-620x350.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.jumbotron {
+    background-color: lavenderblush;
+}
