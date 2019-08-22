@@ -13,6 +13,38 @@ var loses = 0;
 
 // Functions 
 
+// Puts the computer number on the html page
+
+$("#compNumber").text(compNumber);
+
+// Making gemClick function
+
+function gemClick() {
+    ;
+}
+
+// onClick event 
+
+$("#gem1").click(function(){
+    gemClick(gem1);
+    console.log("hey");
+});
+
+$("#gem2").click(function(){
+    gemClick(gem2);
+    console.log("hey");
+});
+
+$("#gem3").click(function(){
+    gemClick(gem3);
+    console.log("hey");
+});
+
+$("#gem4").click(function(){
+    gemClick(gem4);
+    console.log("hey");
+});
+
 // A function that randomly creates a numnber 
 function randomNumberGen (start,end) {
     var randomNumber;
@@ -21,23 +53,32 @@ function randomNumberGen (start,end) {
 
     return randomNumber;
 }
-$("#userNumber").text(userNumber);
 
+//Writes out the userNumber to the html 
+
+
+/*
+// click function for gem 1
 $("#gem1").click(function(){
     userNumber += 1;
-    alert("clicked" + userNumber);
+  });
+  $("#gem2").click(function(){
+    userNumber += 1;
+  });
+  $("#gem3").click(function(){
+    userNumber += 1;
+  });
+  $("#gem4").click(function(){
+    userNumber += 1;
   });
 
-
-
-// A function that randomly assigns a number from 1-19 for my gems
-
-
-// onClick event 
+*/
 
 // Keeps track of wins 
 
-// Keeps track of wins
+// Keeps track of loses
+
+
 
 
 
