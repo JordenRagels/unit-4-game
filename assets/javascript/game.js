@@ -2,59 +2,94 @@
 
 
 // Global Variable
-var compNumber = randomNumberGen(19,120);
-var gem1 = randomNumberGen(1,19);
-var gem2 = randomNumberGen(1,19);
-var gem3 = randomNumberGen(1,19);
-var gem4 = randomNumberGen(1,19);
+var compNumber = randomNumberGen(19, 120);
+var gem1 = randomNumberGen(1, 19);
+var gem2 = randomNumberGen(1, 19);
+var gem3 = randomNumberGen(1, 19);
+var gem4 = randomNumberGen(1, 19);
 var userNumber = 0;
 var wins = 0;
 var loses = 0;
+var score = 0;
 
 // Functions 
 
-// Puts the computer number on the html page
+// Reset Function 
 
-$("#compNumber").text(compNumber);
-
-// Making gemClick function
-
-function gemClick() {
-    ;
+function reset() {
+ userNumber = 0; 
+ compNumber = randomNumberGen(19, 120);
+ gem1 = randomNumberGen(1, 19);
+ gem2 = randomNumberGen(1, 19);
+ gem3 = randomNumberGen(1, 19);
+ gem4 = randomNumberGen(1, 19);
 }
 
-// onClick event 
 
-$("#gem1").click(function(){
-    gemClick(gem1);
-    console.log("hey");
-});
 
-$("#gem2").click(function(){
-    gemClick(gem2);
-    console.log("hey");
-});
 
-$("#gem3").click(function(){
-    gemClick(gem3);
-    console.log("hey");
-});
 
-$("#gem4").click(function(){
-    gemClick(gem4);
-    console.log("hey");
-});
+
+
+
+
+
 
 // A function that randomly creates a numnber 
-function randomNumberGen (start,end) {
+function randomNumberGen(start, end) {
     var randomNumber;
 
     randomNumber = Math.floor(Math.random() * (end - start) + start);
 
     return randomNumber;
 }
+// Puts the computer number on the html page
 
-//Writes out the userNumber to the html 
+$("#compNumber").text(compNumber);
+
+// Making gemClick function
+
+
+// onClick event 
+
+$("#gem1").click(function () {
+    gemClick(gem1);
+});
+
+$("#gem2").click(function () {
+    gemClick(gem2);
+});
+
+$("#gem3").click(function () {
+    gemClick(gem3);
+});
+
+$("#gem4").click(function () {
+    gemClick(gem4);
+});
+
+
+function gemClick(gemValue) { 
+    userNumber += gemValue;
+    $("#userNumber").text(userNumber);
+
+    if (userNumber > compNumber) {
+      
+        loses++;
+        $("#loses").text(loses);
+        reset();
+    }
+    else if (userNumber === compNumber) {
+        
+        wins++;
+        $("#wins").text(wins);
+        reset();
+    }
+    else {
+        console.log(userNumber,compNumber);
+    }
+}
+//Writes out the userNumber to the html
 
 
 /*
@@ -92,7 +127,7 @@ $("#gem1").click(function(){
 //     console.log(checkValue);
 //     if (checkValue == "gem1") {
 //         userNumber += gem1
-        
+
 //     }
 //     else if (checkValue == "gem2") {
 //         userNumber += gem2
@@ -106,7 +141,7 @@ $("#gem1").click(function(){
 //         userNumber += gem4
 //         console.log("hey4");
 //     }
-    
+
 // console.log(userNumber);
 // })
 
