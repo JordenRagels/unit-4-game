@@ -17,21 +17,16 @@ var score = 0;
 // Reset Function 
 
 function reset() {
- userNumber = 0; 
- compNumber = randomNumberGen(19, 120);
- gem1 = randomNumberGen(1, 19);
- gem2 = randomNumberGen(1, 19);
- gem3 = randomNumberGen(1, 19);
- gem4 = randomNumberGen(1, 19);
+   
+    userNumber = 0;
+    compNumber = randomNumberGen(19, 120);
+    gem1 = randomNumberGen(1, 19);
+    gem2 = randomNumberGen(1, 19);
+    gem3 = randomNumberGen(1, 19);
+    gem4 = randomNumberGen(1, 19);
+    $("#compNumber").text(compNumber);
+
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -69,24 +64,22 @@ $("#gem4").click(function () {
 });
 
 
-function gemClick(gemValue) { 
+function gemClick(gemValue) {
     userNumber += gemValue;
     $("#userNumber").text(userNumber);
 
     if (userNumber > compNumber) {
-      
         loses++;
         $("#loses").text(loses);
         reset();
     }
     else if (userNumber === compNumber) {
-        
         wins++;
         $("#wins").text(wins);
         reset();
     }
     else {
-        console.log(userNumber,compNumber);
+        console.log(userNumber, compNumber);
     }
 }
 //Writes out the userNumber to the html
