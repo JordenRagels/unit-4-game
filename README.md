@@ -11,4 +11,4 @@ Enjoy!!
 
 
 Click the link below to start playing!
- https://jordenragels.github.io/unit-4-game/.
+ https://jordenragels.github.io/unit-4-game/
